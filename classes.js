@@ -30,9 +30,20 @@
 */
 
 //Code Here
-
-
-
+class Employee {
+  constructor (first,last,email,age){
+    this.first_name = first;
+    this.last_name = last;
+    this.email = email;
+    this.age = age;
+  }
+  makeWidget(){
+    var widget = this.first_name + " " + this.last_name + " Widget";
+    return widget
+  }
+}
+var chuck = new Employee("Chuck", "D", "test@gmail", 23);
+// chuck.last_name
 ////////// PROBLEM 2 //////////
 
 /*
@@ -45,13 +56,27 @@
       - Accepts a new employee as a parameter and pushes it to their list of reports.
     - fire (index)
       - Fire removes employees from their list of reports at the given index
-
   Call your new class Manager
 */
-
 //Code Here
 
+class Manager extends Employee {
+  constructor (first,last,email,age){
+    this.reports = [];
+    super(first,last,email,age);
+  }
+  hire(newEmployee){
+    this.reports.push(newEmployee)
+  }
+  fire(index){
+    this.reports.splice(index,1)
+  }
+}
 
+// var chuck = new Manager("Chuck", "D", "test@gmail", 23);
+// var jin = new Manager("Jin", "Kim", "jin@gmail", 26);
+// chuck.hire("Larry");
+// jin.hire("Shea");
 
 ////////// PROBLEM 3 //////////
 
