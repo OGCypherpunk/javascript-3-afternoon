@@ -12,7 +12,7 @@
   You work for Widget Co. They have hundreds of employees.
 */
 
-////////// PROBLEM 1 //////////
+////////////////////////////////////////////////////////////////////// PROBLEM 1 //////////////////////////////////////////////////////////////////////
 
 /*
   Make a class to help us build all of the employees.
@@ -37,15 +37,18 @@ class Employee {
     this.email = email;
     this.age = age;
   }
+
+
   makeWidget(){
     var widget = this.first_name + " " + this.last_name + " Widget";
     return widget
   }
 }
-var chuck = new Employee("Chuck", "D", "test@gmail", 23);
-// chuck.last_name
-////////// PROBLEM 2 //////////
 
+
+// var chuck = new Employee("Chuck", "D", "test@gmail", 23);
+// chuck.last_name
+//////////////////////////////////////////////////////////// PROBLEM 2 ////////////////////////////////////////////////////////////
 /*
   Next, make a manager for Widget Co.
   The manager has all the same properties as an Employee.
@@ -59,11 +62,10 @@ var chuck = new Employee("Chuck", "D", "test@gmail", 23);
   Call your new class Manager
 */
 //Code Here
-
 class Manager extends Employee {
   constructor (first,last,email,age){
-    this.reports = [];
     super(first,last,email,age);
+    this.reports = [];
   }
   hire(newEmployee){
     this.reports.push(newEmployee)
@@ -72,22 +74,19 @@ class Manager extends Employee {
     this.reports.splice(index,1)
   }
 }
-
 // var chuck = new Manager("Chuck", "D", "test@gmail", 23);
 // var jin = new Manager("Jin", "Kim", "jin@gmail", 26);
 // chuck.hire("Larry");
 // jin.hire("Shea");
-
-////////// PROBLEM 3 //////////
-
+//////////////////////////////////////////////////////////// PROBLEM 3 ////////////////////////////////////////////////////////////
 /*
-  Managers for Widget Co. get promoted when they get more employees, and get a bonus when they fire employees.
+  Managers for Widget Co. get promoted when they get more EMPLOYEES, and get a bonus when they FIRE EMPLOYEES.
   Progressive Managers have all the same properties as the manager,
   but they also have the following additional properties:
     - title - default 'Not a manager'
     - bonus - default 0
 
-  When employees are added or removed we need to check and update their title. Their titles are as follows:
+  When EMPLOYEES are added or removed we need to check and update their title. Their titles are as follows:
     0 : Not a manager
     1-3 : Barely Manager
     4-10 : Mostly Manager
@@ -95,17 +94,25 @@ class Manager extends Employee {
     51-100 : Manager Plus
     101+ : Bestest Manager
 
-  Everytime they fire an employee they get $100 added to their bonus.
+  Everytime they FIRE an employee they get $100 added to their bonus.
 
-  Call your new class ProgressiveManager
+  Label your new class ProgressiveManager
 */
-
 //Code Here
+
+class ProgressiveManager extends Employee {
+  constructor (first,last,email,age,title,bonus){
+    super(first,last,email,age);
+    this.reports = [];
+    this.title = 'Not a manager';
+    this.bonus = 0
+}
+}
+
 
 
 
 ////////// PROBLEM 4 - Black Diamond //////////
-
 /*
   Widget Co has a factory that makes widgets.
   Factories have Machines.
