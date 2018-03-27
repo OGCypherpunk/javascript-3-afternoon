@@ -40,7 +40,7 @@ class Employee {
 
 
   makeWidget(){
-    var widget = this.first_name + " " + this.last_name + " Widget";
+    let widget = this.first_name + " " + this.last_name + " Widget";
     return widget
   }
 }
@@ -107,6 +107,24 @@ class ProgressiveManager extends Employee {
     this.title = 'Not a manager';
     this.bonus = 0
 }
+
+  hire(employee) {
+    this.reports.push(employee);
+    if (this.reports.length >= 101) {
+      this.title = "Bestest Manager";
+    } else if (this.reports.length > 50) {
+      this.title = "Manager Plus";
+    } else if (this.reports.length > 10) {
+      this.title = "Manager";
+    } else if (this.reports.length > 3) {
+      this.title = "Mostly Manager";
+    } else {
+      this.title = "Barely Manager";
+    }
+  }
+  fire(index) {
+    this.reports.splice(index, 1), (this.bonus += 100);
+  }
 }
 
 

@@ -2,7 +2,6 @@
   Once you complete a problem, refresh ./destructuring.html in your browser and check to see if the problem's test(s) are passing.
   Passed tests will be indicated by a green circle.
   Failed tests will be indicated by a red X.
-
   You can refresh the page at any time to re-run all the tests.
 */
 
@@ -10,11 +9,11 @@
 
 // Do not edit the code below.
 var carDetails = {
-  color: 'red',
-  make: 'toyota',
-  model: 'tacoma',
+  color: "red",
+  make: "toyota",
+  model: "tacoma",
   year: 1994
-}
+};
 // Do not edit the code above.
 
 /*
@@ -22,9 +21,7 @@ var carDetails = {
 */
 
 //Code Here
-
-
-
+var { color, make, model, year } = carDetails;
 ////////// PROBLEM 2 //////////
 
 /*
@@ -33,15 +30,12 @@ var carDetails = {
   The property names are firstName, lastName, and title.
 */
 
-function greeting( obj ) {
-  //Code Here
-  
+function greeting(obj) {
+  var { firstName, lastName, title } = obj;
   // Do not edit the code below.
-  return 'Hello, ' + title + ' ' + firstName + ' ' + lastName + '!';
+  return "Hello, " + title + " " + firstName + " " + lastName + "!";
   // Do not edit the code above.
 }
-
-
 
 ////////// PROBLEM 3 //////////
 
@@ -54,9 +48,10 @@ function greeting( obj ) {
 */
 
 //Code Here
-
-
-
+function totalPopulation(obj) {
+  var { utah, california, texas, arizona } = obj;
+  return utah + california + texas + arizona;
+}
 ////////// PROBLEM 4 //////////
 
 /*
@@ -68,9 +63,12 @@ function greeting( obj ) {
 */
 
 //Code Here
-
-
-
+function ingredients(obj) {
+  var empty = [];
+  var { carb, fat, protein } = obj;
+  empty.push(carb, fat, protein);
+  return empty;
+}
 ////////// PROBLEM 5 //////////
 
 /*
@@ -79,16 +77,15 @@ function greeting( obj ) {
     function example( {one, two, three} ) {
       return one + two + three
     }
-
   Write a function called largeNumbers that will take a destructured object as it's parameter.
   The object properties will be named first, second, and third and their values will be numbers.
   Find the smallest number of the three and return that number.
 */
 
 //Code Here
-
-
-
+function largeNumbers({ first, second, third }) {
+  return Math.min(first, second, third);
+}
 ////////// PROBLEM 6 //////////
 
 /*
@@ -98,5 +95,9 @@ function greeting( obj ) {
 */
 
 //Code Here
-
-
+function numberGroups({ a, b, c }) {
+  var emptyArr = [];
+  emptyArr.push(a, b, c);
+  var longest = Math.max(a.length, b.length, c.length);
+  return emptyArr.filter(a => a.length === longest)[0];
+}
