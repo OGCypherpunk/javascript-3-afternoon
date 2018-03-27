@@ -49,9 +49,12 @@ var employees = [
     2. If the employee's first name is Lorie, change her department to 'HR'.
     3. Return the updated employee array.
 */
-
 //Code Here
-
+function employeeUpdater(){
+  for(let i=0;i<employees.length;i++){
+    if()
+  }
+}
 
 
 ////////// PROBLEM 2 //////////
